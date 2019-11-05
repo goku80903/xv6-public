@@ -54,6 +54,14 @@ struct proc {
   char name[16];               // Process name (debugging)
 };
 
+struct proc_stat {
+ int pid;                       // PID of each process
+ float runtime;                 // Use suitable unit of time
+ int num_run;                   // number of time the process is executed
+ int current_queue;             // current assigned queue
+ int ticks[5];                  // number of ticks each process has received at each of the 5 priority queue
+};
+
 // Process memory is laid out contiguously, low addresses first:
 //   text
 //   original data and bss
